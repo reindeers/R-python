@@ -32,3 +32,16 @@ parsedHtml <-htmlParse(content, asText = TRUE)
 
 # mining with API's
 ## twitter API
+
+myapp <- oauth_app("twitter", 
+                   key="", 
+                   secret = "")
+sign <- sign_oauth1.0(myapp, 
+                      token = "", 
+                      token_secret = "")
+home <- GET("https://api.twitter.com/1.1/statuses/home_timeline.json", sign)
+
+json1 <- content(home)
+json2 <- jsonlite::fromJSON(toJSON(json1))
+
+
