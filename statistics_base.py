@@ -1,3 +1,5 @@
+#see "data science from scrath"
+
 import math
 import sys
 from collections import Counter
