@@ -29,3 +29,19 @@ def vector_mean(vectors):
 
 def dot(v, w):
 	return sum(w_i, v_i for v_i, w_i in zip(v, w))
+
+def sum_of_squares(v):
+	return dot(v, v)
+
+import math
+
+def magnitude(v):
+	return math.sqrt(sum_of_squares(v))
+
+
+def distance(v, w):
+	return magnitude(vector_subtract(v,	w))
+
+
+# matrices
+
