@@ -9,6 +9,10 @@ daily_minutes = [20, 30, 1, 2, 3, 5, 80, 11, 10, 12, 14, 20, 1]
 
 def dot(v, w):
 	return sum(v_i * w_i for v_i, w_i in zip(v, w))
+	
+def sum_of_squares(x):
+	return sum(x_i*x_i for x_i in x)
+	
 # Statistics
 
 f_number = len(num_friends)
@@ -16,18 +20,18 @@ f_number = len(num_friends)
 f_min = min(num_friends)
 f_max = max(num_friends)
 
-def sum_of_squares(x):
-	return sum(x_i*x_i for x_i in x)
 
 def mean(x):
 	return sum(x) / len(x)
 
 def median(x):
 	sort_x = sorted(x)
+	midpoint = len(x)//2
 	if len(x) % 2 == 1:
-		return sort_x[len(x)//2]
+		return sort_x[midpoint]
 	else:
-		return (sort_x[len(x)] + sort_x[(len(x)-1)]) / 2
+		return (sort_x[midpoint-1] + sort_x[midpoint]) / 2
+
 
 def quantile(x, p):
 	sort_x = sorted(x)
